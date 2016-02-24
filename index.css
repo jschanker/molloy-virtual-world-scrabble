@@ -1,0 +1,19 @@
+body{
+	background-color:#FFDEAD;
+	text-align:center;
+
+}
+
+.game-grid-cell{
+	background-color:#bbb;
+	width: 60px;
+	height: 40px;
+	border:solid 2px black;
+	text-align:center;
+}
+
+#gameBoard{
+	margin:auto;
+	border:solid 2px black;
+	border-spacing:0;
+}
