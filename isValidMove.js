@@ -2,29 +2,24 @@ function isValidWord(word,positionOfFirstLetter,direction){
 	validWord = false;
 	if(word in wordDictionary){
 		var copyOfCurrentModel = copyModel(this);
-		if(this.movesPlayed === 0){
-			var positionOfLetter = 0;
-			validWrod = true;
-			while(positionOfLetter < word.length || validWord ===true){
-				if(isValidTilePlacement(word,positionOfFirstLetter,positionOfLetter,direction,this.board){
-					if(direction === horizontal){
-						copyOfCurrentModel[positionOfFirstLetter.row][positionOfFirstLetter.col + positionOfLetter] = word[positionOfLetter];
-					}else{
-						copyOfCurrentModel[positionOfFirstLetter.row + positionOfLetter][positionOfFirstLetter.col] = word[positionOfLetter];
-					}
+		var positionOfLetter = 0;
+		validWord = true;
+		while(positionOfLetter < word.length || validWord ===true){
+			if(isValidTilePlacement(word,positionOfFirstLetter,positionOfLetter,direction,this.board){
+				if(direction === horizontal){
+					copyOfCurrentModel[positionOfFirstLetter.row][positionOfFirstLetter.col + positionOfLetter] = word[positionOfLetter];
 				}else{
-					validWord = false;
+					copyOfCurrentModel[positionOfFirstLetter.row + positionOfLetter][positionOfFirstLetter.col] = word[positionOfLetter];
 				}
-				positionOfLetter++
+			}else{
+				validWord = false;
 			}
-			if(!(copyOfCurrentModel.board[this.gameBoardSize[0]/2][this.gameBoardSize[1]/2] === "")){
-				validWord = true;
-			}
-		}else{
-			
+			positionOfLetter++;
 		}
-	}
-	return validWord
+	}else{
+		validWord = false;
+	}	
+	return validWord;
 }
 
 function copyModel(currentModel){
